@@ -17,17 +17,20 @@ This project was developed with **Opencv** for the _Signal, Image and Video_ exa
 
 ## Configure the project
 
--Create the virtualenv:
+- Create the virtualenv:
 `python3 -m venv .venv`
 
--Activate it:
+- Activate it:
 `source .venv/bin/activate`
 
--Install the requisites: `pip install -r requirements.txt`
+- Install the requisites: `pip install -r requirements.txt`
 
--Set the interpreter
+- Set the interpreter
 
-
+## Run the project
+There are **2 ways** to run Aimlytics:
+- Use the **Jupyter notebook** file changing the input image to analyze
+- Run the **Python main**. You can stop the running program by pressing any keyboard key
 
 ## Authors
 

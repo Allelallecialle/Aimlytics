@@ -1,12 +1,11 @@
 import numpy as np
 import cv2
-import matplotlib.pyplot as plt
-
 
 def acquisition(input_image: str):
     img = cv2.imread(input_image)
     if img is None:
-        print("Could not load image")
+        print('Could not open or find the image:', input_image)
+        exit(0)
 
     return img
 
@@ -29,17 +28,16 @@ def correct_perspective(input_image):
 def assign_points(preprocessed_image):
     return
 
+if __name__ == '__main__':
+    image = acquisition("target_images/clean_target.jpg")  #insert name_file to analyze
 
-image = acquisition("target_images/clean_target.jpg")  #insert name_file to analyze
-output_image = preprocess_image(image)
-detect_target_contours(image)
+    output_image = preprocess_image(image)
+    detect_target_contours(image)
 
-plt.figure(figsize=(10, 13))
-plt.subplot(121)
-plt.title("Input Target")
-plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-plt.axis('off')
-plt.subplot(122)
-plt.title("Analyzed Target")
-plt.imshow(cv2.cvtColor(output_image, cv2.COLOR_BGR2GRAY))
-plt.axis('off')
+    #shows a unique window with input and analyzed image
+    concat_images = np.concatenate((image, output_image), axis=1)
+    cv2.imshow('Input vs Analyzed Target', concat_images)
+
+    #press a random keyboard key to end the running main
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
