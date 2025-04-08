@@ -119,7 +119,7 @@ def assign_points_decimal(hit_center):
     return str_score_decimal
 
 if __name__ == '__main__':
-    image = acquisition("target_images/photo_2025-03-20_09-50-51.jpg")  # Insert name_file to analyze
+    image = acquisition("target_images/photo_2025-02-27_14-20-40.jpg")  # Insert name_file to analyze
 
     preprocessed = preprocess_image(image)
     x, y, w, h = detect_target_contours(preprocessed)
